@@ -1,0 +1,145 @@
+import { RepairService } from "@/features/services/types/service";
+
+export const mockRepairServices: RepairService[] = [
+  {
+    id: "serv-screen-replacement",
+    title: "Laptop Screen Replacement & Display Repair",
+    slug: "laptop-screen-replacement",
+    shortDescription: "Original OEM replacement screens for cracked, flickering, dim, or dead laptop displays.",
+    description: "Whether you have a cracked Retina display on a MacBook, an OLED panel on an XPS, or high-refresh gaming panel, our certified repair technicians replace screens using genuine OEM grade panels with full True Tone & calibration support.",
+    image: "/repair-service-images/laptop-repair-1.jpg",
+    estimatedTime: "2 - 4 Hours",
+    startingPrice: 65,
+    features: [
+      "Original OEM grade replacement displays",
+      "MacBook Pro & Air Retina display specialists",
+      "Full color calibration and TrueTone retention",
+      "90-day peace-of-mind guarantee on parts & labor",
+    ],
+    supportedBrands: ["Apple MacBook", "Dell XPS & Inspiron", "HP Spectre & Envy", "Lenovo ThinkPad", "ASUS ROG"],
+    warranty: "90 Days Warranty",
+    processSteps: [
+      { step: 1, title: "Diagnostic", description: "Inspection of screen connector, backlight fuse, and GPU output." },
+      { step: 2, title: "Precision Disassembly", description: "Safe disconnection of battery and bezel removal in ESD-safe workspace." },
+      { step: 3, title: "Screen Installation", description: "Mounting OEM display panel with calibrated adhesive and torque." },
+      { step: 4, title: "Final QC Testing", description: "Pixel check, brightness calibration, and webcam/mic verification." },
+    ],
+  },
+  {
+    id: "serv-motherboard-repair",
+    title: "Component-Level Motherboard & Logic Board Repair",
+    slug: "logic-board-motherboard-repair",
+    shortDescription: "Micro-soldering, short-circuit diagnostics, PMIC, and chip replacement without expensive board swaps.",
+    description: "Don't throw away a laptop told to have an 'unrepairable' dead motherboard. We operate high-magnification microscopes and thermal cameras to identify shorted capacitors, blown MOSFETs, faulty power management ICs (PMIC), and NAND chips.",
+    image: "/repair-service-images/laptop-repair-2.jpg",
+    estimatedTime: "1 - 3 Business Days",
+    startingPrice: 95,
+    features: [
+      "High-precision micro-soldering and BGA reballing",
+      "Thermal infrared diagnostics to locate elusive short circuits",
+      "MacBook Logic Board repair (No Power, Not Charging, Stuck Apple)",
+      "Significantly cheaper than full board replacements",
+    ],
+    supportedBrands: ["Apple", "Dell", "Lenovo", "HP", "ASUS", "Acer"],
+    warranty: "90 Days Warranty",
+  },
+  {
+    id: "serv-battery-charging",
+    title: "Battery Replacement & Power Port Repair",
+    slug: "battery-replacement-power-port",
+    shortDescription: "Fix swollen batteries, poor battery endurance, loose USB-C charging ports, and MagSafe faults.",
+    description: "Restore all-day battery life and safe charging. We replace degraded or swelling lithium-ion battery packs with certified Grade-A safety cells and fix loose or burnt USB-C / MagSafe charging ports.",
+    image: "/repair-service-images/laptop-repair-3.jpg",
+    estimatedTime: "1 - 2 Hours",
+    startingPrice: 45,
+    features: [
+      "OEM-spec high-cycle safety certified batteries",
+      "Safe handling and disposal of swollen batteries",
+      "USB-C and DC-jack precision soldering",
+      "Charge cycle reset and battery health verification",
+    ],
+    supportedBrands: ["Apple MacBook", "HP", "Dell", "Lenovo", "ASUS"],
+    warranty: "6 Months Warranty",
+  },
+  {
+    id: "serv-liquid-damage",
+    title: "Liquid Spill Emergency Recovery & Cleaning",
+    slug: "liquid-damage-recovery",
+    shortDescription: "Ultrasonic cleaning and chemical corrosion neutralization for coffee, tea, or water spills.",
+    description: "Spilled water, coffee, or juice on your laptop? Turn it off immediately! Our emergency liquid recovery service involves ultrasonic circuit board cleaning, alcohol bath corrosion removal, and individual trace inspection.",
+    image: "/repair-service-images/laptop-repair-4.jpg",
+    estimatedTime: "24 - 48 Hours",
+    startingPrice: 80,
+    features: [
+      "Immediate emergency triage and battery disconnection",
+      "Ultrasonic tank cleaning to dissolve mineral oxidation",
+      "Trace repair and pad rebuilding under stereomicroscope",
+      "Data safety priority and hard drive preservation",
+    ],
+    supportedBrands: ["All Laptop Brands & MacBooks"],
+    warranty: "60 Days Warranty",
+  },
+  {
+    id: "serv-keyboard-trackpad",
+    title: "Keyboard & Trackpad Replacement",
+    slug: "keyboard-trackpad-replacement",
+    shortDescription: "Replace sticky, unresponsive, or damaged keys, trackpads, and backlight sheets.",
+    description: "Fast fix for unresponsive keys, erratic cursor movement, broken scissor mechanisms, or backlighting issues. We provide top-case and individual keyboard replacements across all major laptop models.",
+    image: "/repair-service-images/laptop-repair-5.jpg",
+    estimatedTime: "2 - 4 Hours",
+    startingPrice: 50,
+    features: [
+      "Full top-case or riveted keyboard replacement",
+      "Haptic trackpad calibration and force-touch repair",
+      "Backlight sheet replacement",
+      "Foreign debris and dust cleanout",
+    ],
+    supportedBrands: ["Apple MacBook", "Dell", "Lenovo ThinkPad", "HP", "ASUS"],
+    warranty: "90 Days Warranty",
+  },
+  {
+    id: "serv-ssd-ram-upgrade",
+    title: "High-Speed SSD & RAM Hardware Upgrades",
+    slug: "storage-ram-hardware-upgrade",
+    shortDescription: "Supercharge your laptop's speed with lightning-fast PCIe NVMe SSDs and dual-channel RAM.",
+    description: "Is your laptop running slow, out of space, or lagging during multitasking? Upgrading to a high-speed PCIe Gen4 NVMe SSD and expanding your RAM can make an older laptop feel up to 5x faster. Includes clean OS installation or cloning.",
+    image: "/repair-service-images/laptop-repair-6.jpg",
+    estimatedTime: "1 - 2 Hours",
+    startingPrice: 40,
+    features: [
+      "Blazing fast PCIe NVMe M.2 SSD installation (500GB up to 4TB)",
+      "High-speed DDR4 / DDR5 RAM upgrades",
+      "1-to-1 full system clone (keep all your files and apps intact)",
+      "Thermal pad application for optimal drive cooling",
+    ],
+    supportedBrands: ["Dell", "HP", "Lenovo", "ASUS", "Acer", "MSI", "Select MacBooks"],
+    warranty: "1 Year Warranty on Hardware",
+  },
+  {
+    id: "serv-thermal-service",
+    title: "Thermal Overheating Service & Fan Overhaul",
+    slug: "thermal-service-fan-cleaning",
+    shortDescription: "Deep heatsink descaling, premium thermal paste application (Thermal Grizzly / Arctic MX-6).",
+    description: "If your laptop fan is screaming, hot to the touch, or throttling under normal usage, old dried thermal compound and clogged radiator fins are usually the culprit. We perform an exhaustive thermal overhaul to restore silent, cool operation.",
+    image: "/repair-service-images/laptop-repair-7.jpg",
+    estimatedTime: "1 - 2 Hours",
+    startingPrice: 35,
+    features: [
+      "Radiator fin lint and dust extraction",
+      "Application of enthusiast-grade thermal paste & thermal pads",
+      "Fan bearing lubrication or replacement",
+      "Temperature stress-test benchmarking before and after",
+    ],
+    supportedBrands: ["All Gaming Laptops, Ultrabooks & MacBooks"],
+    warranty: "90 Days Warranty",
+  },
+];
+
+export function getAllServices(): RepairService[] {
+  return mockRepairServices;
+}
+
+export function getServiceBySlug(slug: string): RepairService | undefined {
+  return mockRepairServices.find((s) => s.slug === slug);
+}
+
