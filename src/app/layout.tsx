@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} font-sans h-full antialiased`}
     >
-      <body className="min-h-full dark mx-auto flex flex-col bg-background text-foreground font-sans">
+      <body className="min-h-full mx-auto flex flex-col bg-background text-foreground font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <ContactBar />

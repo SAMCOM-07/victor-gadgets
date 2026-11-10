@@ -62,15 +62,19 @@ export function ShopContent({ initialProducts }: ShopContentProps) {
 
   // Sync state when URL params change externally (e.g. user clicks nav link or search)
   useEffect(() => {
-    setFilters({
-      category: searchParams.get("category") || undefined,
-      brand: searchParams.get("brand") || undefined,
-      priceRange: searchParams.get("price") || undefined,
-      searchQuery: searchParams.get("search") || undefined,
-      sortBy:
-        (searchParams.get("sort") as ProductFilterState["sortBy"]) || "featured",
-      inStockOnly: searchParams.get("instock") === "true",
-    });
+    function doSth() {
+      setFilters({
+        category: searchParams.get("category") || undefined,
+        brand: searchParams.get("brand") || undefined,
+        priceRange: searchParams.get("price") || undefined,
+        searchQuery: searchParams.get("search") || undefined,
+        sortBy:
+          (searchParams.get("sort") as ProductFilterState["sortBy"]) || "featured",
+        inStockOnly: searchParams.get("instock") === "true",
+      });
+    }
+
+    doSth();
   }, [searchParams]);
 
   // Mobile Drawer State
