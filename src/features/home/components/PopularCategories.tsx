@@ -40,7 +40,7 @@ export function PopularCategories() {
       badge: "Pure Sound",
       count: "Original Apple Acoustics",
       image: "/product-images/airpod-1.jpg",
-      href: "/products?category=accessories",
+      href: "/products?category=airpods",
     },
   ];
 

@@ -5,6 +5,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-screen-replacement",
     title: "Laptop Screen Replacement & Display Repair",
     slug: "laptop-screen-replacement",
+    category: "screen",
+    categoryLabel: "Screen & Display",
     shortDescription: "Original OEM replacement screens for cracked, flickering, dim, or dead laptop displays.",
     description: "Whether you have a cracked Retina display on a MacBook, an OLED panel on an XPS, or high-refresh gaming panel, our certified repair technicians replace screens using genuine OEM grade panels with full True Tone & calibration support.",
     image: "/repair-service-images/laptop-repair-1.jpg",
@@ -29,6 +31,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-motherboard-repair",
     title: "Component-Level Motherboard & Logic Board Repair",
     slug: "logic-board-motherboard-repair",
+    category: "motherboard",
+    categoryLabel: "Motherboard Lab",
     shortDescription: "Micro-soldering, short-circuit diagnostics, PMIC, and chip replacement without expensive board swaps.",
     description: "Don't throw away a laptop told to have an 'unrepairable' dead motherboard. We operate high-magnification microscopes and thermal cameras to identify shorted capacitors, blown MOSFETs, faulty power management ICs (PMIC), and NAND chips.",
     image: "/repair-service-images/laptop-repair-2.jpg",
@@ -47,6 +51,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-battery-charging",
     title: "Battery Replacement & Power Port Repair",
     slug: "battery-replacement-power-port",
+    category: "battery",
+    categoryLabel: "Battery & Power",
     shortDescription: "Fix swollen batteries, poor battery endurance, loose USB-C charging ports, and MagSafe faults.",
     description: "Restore all-day battery life and safe charging. We replace degraded or swelling lithium-ion battery packs with certified Grade-A safety cells and fix loose or burnt USB-C / MagSafe charging ports.",
     image: "/repair-service-images/laptop-repair-3.jpg",
@@ -65,6 +71,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-liquid-damage",
     title: "Liquid Spill Emergency Recovery & Cleaning",
     slug: "liquid-damage-recovery",
+    category: "motherboard",
+    categoryLabel: "Liquid Recovery",
     shortDescription: "Ultrasonic cleaning and chemical corrosion neutralization for coffee, tea, or water spills.",
     description: "Spilled water, coffee, or juice on your laptop? Turn it off immediately! Our emergency liquid recovery service involves ultrasonic circuit board cleaning, alcohol bath corrosion removal, and individual trace inspection.",
     image: "/repair-service-images/laptop-repair-4.jpg",
@@ -83,6 +91,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-keyboard-trackpad",
     title: "Keyboard & Trackpad Replacement",
     slug: "keyboard-trackpad-replacement",
+    category: "hardware",
+    categoryLabel: "Hardware & Inputs",
     shortDescription: "Replace sticky, unresponsive, or damaged keys, trackpads, and backlight sheets.",
     description: "Fast fix for unresponsive keys, erratic cursor movement, broken scissor mechanisms, or backlighting issues. We provide top-case and individual keyboard replacements across all major laptop models.",
     image: "/repair-service-images/laptop-repair-5.jpg",
@@ -101,6 +111,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-ssd-ram-upgrade",
     title: "High-Speed SSD & RAM Hardware Upgrades",
     slug: "storage-ram-hardware-upgrade",
+    category: "upgrade",
+    categoryLabel: "SSD & RAM Upgrades",
     shortDescription: "Supercharge your laptop's speed with lightning-fast PCIe NVMe SSDs and dual-channel RAM.",
     description: "Is your laptop running slow, out of space, or lagging during multitasking? Upgrading to a high-speed PCIe Gen4 NVMe SSD and expanding your RAM can make an older laptop feel up to 5x faster. Includes clean OS installation or cloning.",
     image: "/repair-service-images/laptop-repair-6.jpg",
@@ -119,6 +131,8 @@ export const mockRepairServices: RepairService[] = [
     id: "serv-thermal-service",
     title: "Thermal Overheating Service & Fan Overhaul",
     slug: "thermal-service-fan-cleaning",
+    category: "maintenance",
+    categoryLabel: "Thermal & Cleaning",
     shortDescription: "Deep heatsink descaling, premium thermal paste application (Thermal Grizzly / Arctic MX-6).",
     description: "If your laptop fan is screaming, hot to the touch, or throttling under normal usage, old dried thermal compound and clogged radiator fins are usually the culprit. We perform an exhaustive thermal overhaul to restore silent, cool operation.",
     image: "/repair-service-images/laptop-repair-7.jpg",
@@ -142,4 +156,13 @@ export function getAllServices(): RepairService[] {
 export function getServiceBySlug(slug: string): RepairService | undefined {
   return mockRepairServices.find((s) => s.slug === slug);
 }
+
+export const serviceCategoryFilters = [
+  { id: "all", label: "All Services" },
+  { id: "motherboard", label: "Motherboard Lab" },
+  { id: "screen", label: "Screen & Display" },
+  { id: "battery", label: "Battery & Power" },
+  { id: "upgrade", label: "SSD & RAM Upgrades" },
+  { id: "maintenance", label: "Thermal & Maintenance" },
+];
 

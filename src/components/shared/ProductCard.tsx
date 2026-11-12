@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, Flame, ShoppingBag, Check, Heart } from "lucide-react";
+import { Star, Flame, ShoppingBag, Heart, Minus, Plus } from "lucide-react";
 import { Product } from "@/types/product";
 import { formatPrice } from "@/lib/utils";
 import { useCartStore } from "@/features/cart/store/cart-store";
@@ -15,18 +15,25 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, className = "" }: ProductCardProps) {
-  const [isAdded, setIsAdded] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+
+  const cartItem = useCartStore((state) =>
+    state.items.find((item) => item.product.id === product.id)
+  );
+  const inCartQuantity = cartItem?.quantity || 0;
   const addItem = useCartStore((state) => state.addItem);
+  const incrementQuantity = useCartStore((state) => state.incrementQuantity);
+  const decrementQuantity = useCartStore((state) => state.decrementQuantity);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     addItem(product, 1);
-    setIsAdded(true);
-    setTimeout(() => {
-      setIsAdded(false);
-    }, 1500);
   };
 
   const handleLike = (e: React.MouseEvent) => {
@@ -36,6 +43,7 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
   };
 
   const imageUrl = product.images?.[0] || "/product-images/laptop-1.jpg";
+  const maxStock = product.stockCount > 0 ? product.stockCount : 99;
 
   return (
     <div
@@ -145,27 +153,58 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
           )}
         </div>
 
-        {/* Add To Cart using shadcn Button */}
-        <Button
-          onClick={handleAddToCart}
-          className={`w-full h-10 sm:h-10.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-colors shadow-xs cursor-pointer ${
-            isAdded
-              ? "bg-success hover:bg-success/90 text-success-foreground"
-              : "bg-brand-green hover:bg-brand-green-hover text-white active:scale-98"
-          }`}
-        >
-          {isAdded ? (
-            <>
-              <Check className="w-4 h-4" />
-              Added To Cart
-            </>
-          ) : (
-            <>
-              <ShoppingBag className="w-4 h-4" />
-              Add To Cart
-            </>
-          )}
-        </Button>
+        {/* Add To Cart or Increment/Decrement Stepper */}
+        {mounted && inCartQuantity > 0 ? (
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+            className="w-full h-10 sm:h-10.5 rounded-full border border-brand-green/40 bg-brand-sand-pill flex items-center justify-between p-1 shadow-2xs"
+          >
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                decrementQuantity(product.id);
+              }}
+              className="w-8 h-8 rounded-full bg-card border border-border text-foreground hover:bg-destructive hover:text-white hover:border-destructive flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Decrease quantity"
+            >
+              <Minus className="w-3.5 h-3.5" />
+            </button>
+
+            <span className="text-xs font-bold text-foreground select-none flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
+              <span>{inCartQuantity} in Cart</span>
+            </span>
+
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (inCartQuantity < maxStock) {
+                  incrementQuantity(product.id);
+                }
+              }}
+              disabled={inCartQuantity >= maxStock}
+              className="w-8 h-8 rounded-full bg-brand-green text-white hover:bg-brand-green-hover disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition-colors cursor-pointer shadow-2xs"
+              aria-label="Increase quantity"
+            >
+              <Plus className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        ) : (
+          <Button
+            onClick={handleAddToCart}
+            className="w-full h-10 sm:h-10.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-hover text-white active:scale-98 shadow-xs cursor-pointer"
+          >
+            <ShoppingBag className="w-4 h-4" />
+            <span>Add To Cart</span>
+          </Button>
+        )}
       </div>
     </div>
   );

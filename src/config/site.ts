@@ -9,8 +9,8 @@ export const siteConfig = {
   // WhatsApp Configuration for Direct Orders & Enquiries
   // Using international format without '+' or special characters for wa.me links
   whatsapp: {
-    phoneNumber: "2348000000000", // Clearly identified placeholder per development rules
-    displayNumber: "+234 800 000 0000",
+    phoneNumber: "2349061873560", // Clearly identified placeholder per development rules
+    displayNumber: "+234 906 187 3560",
     defaultMessage: "Hello Victor Gadgets! I am interested in placing an order or making an enquiry.",
   },
 
@@ -38,7 +38,7 @@ export const siteConfig = {
   navItems: [
     { label: "Home", href: "/" },
     { label: "Shop", href: "/products" },
-    { label: "Services & Repairs", href: "/services" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
   ],
 

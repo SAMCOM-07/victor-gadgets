@@ -53,7 +53,7 @@ export function ProductGrid({
 
   return (
     <div
-      className={`grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:grid-cols-5 gap-3 ${className}`}
+      className={`grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 ${className}`}
     >
       {products.map((product, index) => (
         <motion.div

@@ -42,9 +42,9 @@ export function LatestInsights() {
     <section className="py-16 sm:py-20 bg-background">
       <div className="container">
         <SectionHeader
-          title="Latest Blog Posts"
-          subtitle="Stay updated with our latest insights, tips, and electronics repair news"
-          actionText="View All Posts"
+          title="Repair Insights & Tech Guides"
+          subtitle="Expert tips, laptop diagnostics guides, and gadget care advice from our Ikeja technician lab"
+          actionText="View All Services"
           actionHref="/services"
         />
 
@@ -118,7 +118,7 @@ export function LatestInsights() {
             className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-brand-sand-pill border border-brand-sand-pill-border hover:bg-brand-sand-pill-hover text-xs sm:text-sm font-semibold text-foreground transition-colors"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
-            Discover more insights and stories in our blog section
+            Explore all professional repair & maintenance services in Ikeja, Lagos
             <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
           </Link>
         </motion.div>

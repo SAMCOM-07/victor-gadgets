@@ -3,10 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, ChevronDown, User } from "lucide-react";
+import { ChevronDown, User } from "lucide-react";
 import { SearchBar } from "./SearchBar";
 import { CartBadge } from "./CartBadge";
 import { MobileNav } from "./MobileNav";
+import { ThemeToggle } from "@/components/theme";
 import { siteConfig } from "@/config/site";
 import {
   DropdownMenu,
@@ -22,8 +23,7 @@ export function Header() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "Shop", href: "/products" },
-    { label: "Deals", href: "/products?deals=true" },
-    { label: "Blog", href: "/services" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -107,17 +107,8 @@ export function Header() {
             {/* Shopping Cart Badge with real Zustand store */}
             <CartBadge />
 
-            {/* Wishlist Heart Icon with counter */}
-            <Link
-              href="/products"
-              className="relative p-2 text-foreground hover:text-primary rounded-full hover:bg-muted transition-colors hidden sm:flex"
-              aria-label="Saved items"
-            >
-              <Heart className="w-5 h-5" />
-              <span className="absolute -top-0.5 -right-0.5 bg-brand-green text-primary-foreground text-[11px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center">
-                0
-              </span>
-            </Link>
+            {/* Dark / Light Theme Mode Switch */}
+            <ThemeToggle />
 
             {/* User Profile using shadcn DropdownMenu */}
             <DropdownMenu>

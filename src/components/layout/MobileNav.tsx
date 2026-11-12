@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { ThemeToggle } from "@/components/theme";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +48,12 @@ export function MobileNav() {
               })}
             </nav>
 
-            <div className="pt-4 border-t border-border/60 flex flex-col gap-3">
+            <div className="flex items-center justify-between py-1.5 px-3 rounded-xl bg-muted/60 border border-border/60">
+              <span className="text-xs font-semibold text-muted-foreground">Appearance</span>
+              <ThemeToggle showLabel />
+            </div>
+
+            <div className="pt-3 border-t border-border/60 flex flex-col gap-3">
               <a
                 href={`https://wa.me/${siteConfig.whatsapp.phoneNumber}`}
                 target="_blank"

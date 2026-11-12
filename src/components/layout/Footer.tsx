@@ -27,11 +27,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-border/60">
           {/* Col 1: Brand & Bio (4 cols) */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 group">
-              <ShoppingCart className="w-6 h-6 text-brand-orange" />
-              <span className="font-extrabold text-lg tracking-tight text-foreground uppercase">
-                VICTOR GADGETS<span className="text-brand-orange">:</span>
-              </span>
+            <Link href="/" className="font-extrabold text-lg tracking-tight text-brand-green uppercase">
+              VG
             </Link>
 
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm font-normal">
@@ -49,7 +46,7 @@ export function Footer() {
                 className="w-9 h-9 rounded-full border border-border hover:border-brand-green hover:bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="WhatsApp"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.785-.403-1.425-.589-2.34-2.038-2.411-2.133-.071-.094-.576-.767-.576-1.464 0-.697.362-1.04.49-1.184.129-.144.281-.18.375-.18.093 0 .187.001.269.006.086.004.202-.033.315.24.118.283.404.986.44 1.058.036.073.06.157.012.253-.048.096-.072.156-.144.24-.072.084-.152.188-.217.253-.072.072-.147.151-.063.295.084.144.374.617.803.999.553.492 1.019.645 1.163.717.144.072.228.06.312-.036.084-.096.36-419.456-.563.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.35-.108.755z" />
                 </svg>
               </a>

@@ -2,6 +2,8 @@ export interface RepairService {
   id: string;
   title: string;
   slug: string;
+  category: string;
+  categoryLabel?: string;
   shortDescription: string;
   description: string;
   image: string;
