@@ -6,8 +6,15 @@ import {
   ShoppingBag,
   ArrowLeft,
   Trash2,
-  ChevronRight,
 } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { motion } from "motion/react";
 import { useCartStore } from "@/features/cart/store/cart-store";
 import { CartItem } from "@/features/cart/types/cart";
@@ -58,17 +65,18 @@ export function CartView() {
   return (
     <div className="py-8 sm:py-12 bg-background min-h-screen">
       <div className="container space-y-6 sm:space-y-8">
-        {/* Breadcrumb */}
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-1.5 text-xs text-muted-foreground"
-        >
-          <Link href="/" className="hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="font-semibold text-foreground">Cart</span>
-        </nav>
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Cart</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         {/* Page Header */}
         <div className="flex items-center justify-between pb-2">

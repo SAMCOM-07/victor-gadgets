@@ -25,7 +25,9 @@ export function ProductActions({ product }: ProductActionsProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    (() => {
+      setMounted(true);
+    })();
   }, []);
 
   const cartItem = useCartStore((state) =>
@@ -101,7 +103,7 @@ export function ProductActions({ product }: ProductActionsProps) {
             </button>
 
             <div className="flex items-center gap-2 font-bold text-foreground">
-              <Check className="w-4 h-4 text-brand-green stroke-[3]" />
+              <Check className="w-4 h-4 text-brand-green stroke-3" />
               <span>{inCartQuantity} in Cart</span>
               <span className="text-muted-foreground font-normal hidden sm:inline">
                 ({formatPrice(product.price * inCartQuantity)})

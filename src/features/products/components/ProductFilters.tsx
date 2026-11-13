@@ -55,11 +55,11 @@ export function ProductFilters({
   const priceRangeOptions = useMemo(() => {
     return [
       { key: "all", label: "All Prices", count: products.length },
-      { key: "under-100", label: "Under $100", count: products.filter((p) => p.price < 100).length },
-      { key: "100-300", label: "$100 - $300", count: products.filter((p) => p.price >= 100 && p.price <= 300).length },
-      { key: "300-700", label: "$300 - $700", count: products.filter((p) => p.price >= 300 && p.price <= 700).length },
-      { key: "700-1500", label: "$700 - $1,500", count: products.filter((p) => p.price >= 700 && p.price <= 1500).length },
-      { key: "over-1500", label: "Over $1,500", count: products.filter((p) => p.price > 1500).length },
+      { key: "under-100k", label: "Under ₦100,000", count: products.filter((p) => p.price < 100000).length },
+      { key: "100k-500k", label: "₦100,000 - ₦500,000", count: products.filter((p) => p.price >= 100000 && p.price <= 500000).length },
+      { key: "500k-1500k", label: "₦500,000 - ₦1,500,000", count: products.filter((p) => p.price >= 500000 && p.price <= 1500000).length },
+      { key: "1500k-3000k", label: "₦1,500,000 - ₦3,000,000", count: products.filter((p) => p.price >= 1500000 && p.price <= 3000000).length },
+      { key: "over-3000k", label: "Over ₦3,000,000", count: products.filter((p) => p.price > 3000000).length },
     ];
   }, [products]);
 

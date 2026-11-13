@@ -1,6 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { siteConfig } from "@/config/site";
 import { getAllServices } from "@/features/services/data/services";
 import {
@@ -31,16 +38,17 @@ export default function ServicesPage() {
     <div className="py-8 sm:py-12 bg-background min-h-screen">
       <div className="container space-y-12 sm:space-y-16">
         {/* Breadcrumb Navigation */}
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-1.5 text-xs text-muted-foreground flex-wrap"
-        >
-          <Link href="/" className="hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-          <span className="font-semibold text-foreground">Services & Repairs</span>
-        </nav>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Services & Repairs</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         {/* 1. Hero Showcase Banner */}
         <ServicesHero />

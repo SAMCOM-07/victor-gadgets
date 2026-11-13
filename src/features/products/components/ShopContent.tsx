@@ -151,8 +151,23 @@ export function ShopContent({ initialProducts }: ShopContentProps) {
     if (filters.category === "airpods") return "AirPods & Earpods";
     if (filters.category === "accessories") return "Gadgets & Accessories";
     if (filters.brand) return `${filters.brand} Products`;
-    return "Shop Products";
+    return "Quality Laptops, iPhones & Gadgets";
   }, [filters.category, filters.brand]);
+
+  // Human readable subtitle
+  const bannerSubtitle = useMemo(() => {
+    if (filters.category === "laptops")
+      return "Handpicked Apple MacBooks, Dell XPS, HP Spectre & ThinkPads tested for peak performance, battery health, and long-term durability.";
+    if (filters.category === "smartphones")
+      return "Brand new and pristine open-box iPhones & Samsung flagships. Factory unlocked with verified battery health and warranty.";
+    if (filters.category === "pouches")
+      return "Premium drop-resistant cases, silicone MagSafe pouches, and 9H diamond tempered screen protectors for all phone models.";
+    if (filters.category === "airpods")
+      return "Immerse in pure acoustics. Genuine Apple AirPods, AirPods Pro, and audio accessories with spatial sound and active noise cancellation.";
+    if (filters.category === "accessories")
+      return "Original GaN chargers, braided MagSafe cables, heavy-duty power banks, and essential gadgets with manufacturer warranty.";
+    return "Browse certified UK/US-used and brand-new MacBooks, Windows laptops, factory-unlocked iPhones, and genuine accessories. Inspected by our Ikeja technicians with warranty.";
+  }, [filters.category]);
 
   return (
     <div className="py-8 sm:py-12 bg-background min-h-screen">
@@ -160,7 +175,8 @@ export function ShopContent({ initialProducts }: ShopContentProps) {
         {/* 1. Top Header Box */}
         <ShopHeader
           title={bannerTitle}
-          subtitle="Discover amazing products tailored to your needs with certified quality and fast delivery"
+          subtitle={bannerSubtitle}
+          category={filters.category}
         />
 
         {/* 2. Main Two-Column Layout */}

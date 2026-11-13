@@ -11,7 +11,7 @@ export const mockRepairServices: RepairService[] = [
     description: "Whether you have a cracked Retina display on a MacBook, an OLED panel on an XPS, or high-refresh gaming panel, our certified repair technicians replace screens using genuine OEM grade panels with full True Tone & calibration support.",
     image: "/repair-service-images/laptop-repair-1.jpg",
     estimatedTime: "2 - 4 Hours",
-    startingPrice: 65,
+    startingPrice: 85000,
     features: [
       "Original OEM grade replacement displays",
       "MacBook Pro & Air Retina display specialists",
@@ -37,7 +37,7 @@ export const mockRepairServices: RepairService[] = [
     description: "Don't throw away a laptop told to have an 'unrepairable' dead motherboard. We operate high-magnification microscopes and thermal cameras to identify shorted capacitors, blown MOSFETs, faulty power management ICs (PMIC), and NAND chips.",
     image: "/repair-service-images/laptop-repair-2.jpg",
     estimatedTime: "1 - 3 Business Days",
-    startingPrice: 95,
+    startingPrice: 65000,
     features: [
       "High-precision micro-soldering and BGA reballing",
       "Thermal infrared diagnostics to locate elusive short circuits",
@@ -57,7 +57,7 @@ export const mockRepairServices: RepairService[] = [
     description: "Restore all-day battery life and safe charging. We replace degraded or swelling lithium-ion battery packs with certified Grade-A safety cells and fix loose or burnt USB-C / MagSafe charging ports.",
     image: "/repair-service-images/laptop-repair-3.jpg",
     estimatedTime: "1 - 2 Hours",
-    startingPrice: 45,
+    startingPrice: 45000,
     features: [
       "OEM-spec high-cycle safety certified batteries",
       "Safe handling and disposal of swollen batteries",
@@ -77,7 +77,7 @@ export const mockRepairServices: RepairService[] = [
     description: "Spilled water, coffee, or juice on your laptop? Turn it off immediately! Our emergency liquid recovery service involves ultrasonic circuit board cleaning, alcohol bath corrosion removal, and individual trace inspection.",
     image: "/repair-service-images/laptop-repair-4.jpg",
     estimatedTime: "24 - 48 Hours",
-    startingPrice: 80,
+    startingPrice: 55000,
     features: [
       "Immediate emergency triage and battery disconnection",
       "Ultrasonic tank cleaning to dissolve mineral oxidation",
@@ -97,7 +97,7 @@ export const mockRepairServices: RepairService[] = [
     description: "Fast fix for unresponsive keys, erratic cursor movement, broken scissor mechanisms, or backlighting issues. We provide top-case and individual keyboard replacements across all major laptop models.",
     image: "/repair-service-images/laptop-repair-5.jpg",
     estimatedTime: "2 - 4 Hours",
-    startingPrice: 50,
+    startingPrice: 35000,
     features: [
       "Full top-case or riveted keyboard replacement",
       "Haptic trackpad calibration and force-touch repair",
@@ -117,7 +117,7 @@ export const mockRepairServices: RepairService[] = [
     description: "Is your laptop running slow, out of space, or lagging during multitasking? Upgrading to a high-speed PCIe Gen4 NVMe SSD and expanding your RAM can make an older laptop feel up to 5x faster. Includes clean OS installation or cloning.",
     image: "/repair-service-images/laptop-repair-6.jpg",
     estimatedTime: "1 - 2 Hours",
-    startingPrice: 40,
+    startingPrice: 40000,
     features: [
       "Blazing fast PCIe NVMe M.2 SSD installation (500GB up to 4TB)",
       "High-speed DDR4 / DDR5 RAM upgrades",
@@ -137,7 +137,7 @@ export const mockRepairServices: RepairService[] = [
     description: "If your laptop fan is screaming, hot to the touch, or throttling under normal usage, old dried thermal compound and clogged radiator fins are usually the culprit. We perform an exhaustive thermal overhaul to restore silent, cool operation.",
     image: "/repair-service-images/laptop-repair-7.jpg",
     estimatedTime: "1 - 2 Hours",
-    startingPrice: 35,
+    startingPrice: 25000,
     features: [
       "Radiator fin lint and dust extraction",
       "Application of enthusiast-grade thermal paste & thermal pads",

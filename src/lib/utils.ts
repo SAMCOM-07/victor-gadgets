@@ -3,18 +3,19 @@ import { cn } from "cn";
 export { cn };
 
 /**
- * Format a number as currency (USD default or custom currency)
+ * Format a number as currency (NGN default or custom currency)
  */
 export function formatPrice(
   amount: number,
   options: {
     currency?: string;
+    locale?: string;
     showDecimals?: boolean;
   } = {}
 ): string {
-  const { currency = "USD", showDecimals = false } = options;
+  const { currency = "NGN", locale = "en-NG", showDecimals = false } = options;
 
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
     minimumFractionDigits: showDecimals ? 2 : 0,

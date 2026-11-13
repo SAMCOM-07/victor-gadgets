@@ -21,7 +21,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Read saved preference from localStorage
     const saved = localStorage.getItem("vg-theme") as Theme | null;
     const initialTheme = saved || "system";
-    setThemeState(initialTheme);
+    (() => {
+      setThemeState(initialTheme);
+    })();
 
     const applyTheme = (t: Theme) => {
       let isDark = false;

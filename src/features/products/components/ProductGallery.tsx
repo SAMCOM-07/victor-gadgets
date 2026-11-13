@@ -78,7 +78,7 @@ export function ProductGallery({
       pool = [
         "/product-images/iphone-accesspries-1.jpg",
         "/product-images/airpod-1.jpg",
-        "/product-images/laptop-3.jpg",
+        "/product-images/airpod-2.jpg",
       ];
     }
 

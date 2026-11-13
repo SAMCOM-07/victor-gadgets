@@ -61,12 +61,12 @@ export const siteConfig = {
 
   // E-commerce display defaults
   currency: {
-    code: "USD",
-    symbol: "$",
+    code: "NGN",
+    symbol: "₦",
   },
   
   shipping: {
-    freeThreshold: 100,
+    freeThreshold: 250000,
     standardFee: 0,
     deliveryNote: "Nationwide Delivery Available Across Nigeria",
   },

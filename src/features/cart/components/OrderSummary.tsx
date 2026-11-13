@@ -177,7 +177,7 @@ export function OrderSummary() {
 
           <div className="flex items-center justify-between">
             <span className="text-muted-foreground">Estimated Tax</span>
-            <span className="font-semibold text-card-foreground">$0.00</span>
+            <span className="font-semibold text-card-foreground">{formatPrice(0)}</span>
           </div>
 
           <div className="pt-3 border-t border-border flex items-baseline justify-between">

@@ -20,7 +20,7 @@ export function SearchBar({ className = "" }: { className?: string }) {
   return (
     <form
       onSubmit={handleSearch}
-      className={`relative flex items-center w-full sm:max-w-sm ${className}`}
+      className={`relative flex items-center w-full ${className}`}
     >
       <div className="relative w-full">
         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />

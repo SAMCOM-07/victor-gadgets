@@ -1,7 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Star, Tag, Sparkles } from "lucide-react";
+import { Star, Tag, Sparkles } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { siteConfig } from "@/config/site";
 import { mockProducts, getProductBySlug } from "@/features/products/data/products";
 import {
@@ -59,32 +67,32 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     <div className="py-8 sm:py-12 bg-background min-h-screen">
       <div className="container space-y-10 sm:space-y-14">
         {/* Breadcrumb Navigation */}
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-1.5 text-xs text-muted-foreground flex-wrap"
-        >
-          <Link href="/" className="hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-          <Link
-            href="/products"
-            className="hover:text-foreground transition-colors"
-          >
-            Shop
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-          <Link
-            href={`/products?category=${product.category}`}
-            className="hover:text-foreground transition-colors capitalize"
-          >
-            {product.categoryLabel || product.category}
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-          <span className="font-semibold text-foreground truncate max-w-xs sm:max-w-md">
-            {product.name}
-          </span>
-        </nav>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link href="/products" />}>Shop</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink
+                render={<Link href={`/products?category=${product.category}`} />}
+                className="capitalize"
+              >
+                {product.categoryLabel || product.category}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="truncate max-w-xs sm:max-w-md">
+                {product.name}
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         {/* 1. Main Product Showcase Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">

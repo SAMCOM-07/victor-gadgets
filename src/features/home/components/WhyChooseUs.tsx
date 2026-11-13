@@ -7,8 +7,8 @@ import { motion } from "motion/react";
 export function WhyChooseUs() {
   const points = [
     {
-      title: "Free Delivery",
-      description: "Free shipping over $100",
+      title: "Fast Delivery",
+      description: "Same-day Lagos dispatch & nationwide waybill",
       icon: Truck,
       iconClass: "bg-feature-blue-light text-feature-blue",
     },
@@ -109,7 +109,7 @@ export function WhyChooseUs() {
                   sizes="(max-width: 1024px) 100vw, 480px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3.5 left-3.5 text-white text-xs font-semibold bg-foreground/80 backdrop-blur-xs px-3.5 py-1.5 rounded-lg border border-white/10">
                   Certified Diagnostic Lab
                 </div>

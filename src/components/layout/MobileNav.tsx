@@ -15,7 +15,7 @@ export function MobileNav() {
   const close = () => setIsOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         onClick={toggle}
         className="p-2 text-foreground hover:text-primary rounded-lg transition-colors cursor-pointer"

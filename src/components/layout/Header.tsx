@@ -34,12 +34,10 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 shrink-0 focus:outline-none group"
+            className="font-extrabold text-lg sm:text-xl text-brand-green"
             aria-label="Victor Gadgets Home"
           >
-            <span className="font-extrabold text-lg sm:text-xl text-brand-green">
-              VG
-            </span>
+            VG
           </Link>
 
           {/* Nav Links */}

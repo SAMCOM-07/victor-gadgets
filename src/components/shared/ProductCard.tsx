@@ -27,7 +27,9 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
   const decrementQuantity = useCartStore((state) => state.decrementQuantity);
 
   useEffect(() => {
-    setMounted(true);
+    (() => {
+      setMounted(true);
+    })();
   }, []);
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -66,11 +68,10 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
 
           <button
             onClick={handleLike}
-            className={`p-1.5 rounded-full transition-colors cursor-pointer ${
-              isLiked
-                ? "text-like-active"
-                : "text-like-inactive hover:text-like-active"
-            }`}
+            className={`p-1.5 rounded-full transition-colors cursor-pointer ${isLiked
+              ? "text-like-active"
+              : "text-like-inactive hover:text-like-active"
+              }`}
             aria-label="Save to wishlist"
           >
             <Heart
@@ -116,11 +117,10 @@ export function ProductCard({ product, className = "" }: ProductCardProps) {
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
                 key={i}
-                className={`w-3.5 h-3.5 ${
-                  i < Math.floor(product.rating)
-                    ? "fill-rating-star text-rating-star"
-                    : "text-rating-star-empty fill-rating-star-empty"
-                }`}
+                className={`w-3.5 h-3.5 ${i < Math.floor(product.rating)
+                  ? "fill-rating-star text-rating-star"
+                  : "text-rating-star-empty fill-rating-star-empty"
+                  }`}
               />
             ))}
           </div>

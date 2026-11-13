@@ -24,8 +24,8 @@ export function WhyShopWithUs() {
       barClass: "bg-feature-blue",
     },
     {
-      title: "Free Delivery",
-      description: "Free shipping on orders over $50",
+      title: "Nationwide Delivery",
+      description: "Prompt Lagos delivery & 36 states waybill",
       icon: Truck,
       iconClass: "bg-feature-green-light text-feature-green",
       barClass: "bg-feature-green",
@@ -83,7 +83,7 @@ export function WhyShopWithUs() {
         />
 
         {/* Warm Container */}
-        <div className="mt-10 bg-gradient-to-b from-brand-sand-light to-brand-sand border border-brand-sand-border rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs">
+        <div className="mt-10 bg-linear-to-b from-brand-sand-light to-brand-sand border border-brand-sand-border rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs">
           {/* 8 Feature Cards (4 across in 2 rows) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {benefits.map((b, index) => {

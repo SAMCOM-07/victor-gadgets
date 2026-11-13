@@ -56,32 +56,25 @@ export function filterAndSortProducts(
   // Price range filter
   if (filters.priceRange && filters.priceRange !== "all") {
     switch (filters.priceRange) {
+      case "under-100k":
       case "under-100":
-        result = result.filter((p) => p.price < 100);
+        result = result.filter((p) => p.price < 100000);
         break;
+      case "100k-500k":
       case "100-300":
-        result = result.filter((p) => p.price >= 100 && p.price <= 300);
+        result = result.filter((p) => p.price >= 100000 && p.price <= 500000);
         break;
+      case "500k-1500k":
       case "300-700":
-        result = result.filter((p) => p.price >= 300 && p.price <= 700);
+        result = result.filter((p) => p.price >= 500000 && p.price <= 1500000);
         break;
+      case "1500k-3000k":
       case "700-1500":
-        result = result.filter((p) => p.price >= 700 && p.price <= 1500);
+        result = result.filter((p) => p.price >= 1500000 && p.price <= 3000000);
         break;
+      case "over-3000k":
       case "over-1500":
-        result = result.filter((p) => p.price > 1500);
-        break;
-      case "under-500":
-        result = result.filter((p) => p.price < 500);
-        break;
-      case "500-1000":
-        result = result.filter((p) => p.price >= 500 && p.price <= 1000);
-        break;
-      case "1000-2000":
-        result = result.filter((p) => p.price >= 1000 && p.price <= 2000);
-        break;
-      case "over-2000":
-        result = result.filter((p) => p.price > 2000);
+        result = result.filter((p) => p.price > 3000000);
         break;
     }
   }
